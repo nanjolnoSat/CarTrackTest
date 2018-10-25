@@ -8,5 +8,5 @@
 <b>NormalOfZoomCarTrackManger:</b>边走边画线,不过每次行走的距离是会根据缩放等级变化的.根据当前缩放等级后1cm对应的具体距离/4,这个4也可以设置成别的.<br/>
 <b>MoveCarTrackManager:</b>只是车辆行驶,没有画线.<br/>
 <b>MoveHasLineCarTrackManager:</b>先将整个路线画出来,再行驶.<br/>
-<b>MoveHasLineOfZoomCarTrackManager:</b>先将整个路线画出来,再行驶.行驶的距离由缩放等级决定.
+<b>MoveHasLineOfZoomCarTrackManager:</b>先将整个路线画出来,再行驶.行驶的距离由缩放等级决定.<br/>
 java代码我就不提供了,之前翻译过一小段kotlin代码,把自己恶心得要死,还是用kotlin方便
