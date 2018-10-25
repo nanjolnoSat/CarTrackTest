@@ -124,6 +124,7 @@ fun BaiduMap.onZoomLevelChange(action: (Float) -> Unit) {
 
         override fun onMapStatusChangeFinish(status: MapStatus?) {
             status?.also {
+                //这些数据都是从百度地图开放平台拿的
                 val distance = when (it.zoom.toInt()) {
                     22 -> 2f
                     21 -> 5f
