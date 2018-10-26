@@ -40,10 +40,12 @@ abstract class CarTrackManager(protected val baiduMap: BaiduMap, private val can
     fun setTrackLatLngList(list: ArrayList<LatLng>, distance: Int = 0) {
         if (list.size <= 1) {
             actualLatLngList = list
+            onSetTrackLatLngListFinish()
             return
         }
         if (distance <= 0) {
             actualLatLngList = list
+            onSetTrackLatLngListFinish()
             return
         }
         actualLatLngList.clear()
