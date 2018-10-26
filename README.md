@@ -9,4 +9,5 @@
 <b>MoveCarTrackManager:</b>只是车辆行驶,没有画线.<br/>
 <b>MoveHasLineCarTrackManager:</b>先将整个路线画出来,再行驶.<br/>
 <b>MoveHasLineOfZoomCarTrackManager:</b>先将整个路线画出来,再行驶.行驶的距离由缩放等级决定.<br/>
-java代码我就不提供了,之前翻译过一小段kotlin代码,把自己恶心得要死,还是用kotlin方便
+java代码我就不提供了,之前翻译过一小段kotlin代码,把自己恶心得要死,还是用kotlin方便<br/>
+汽车图片的角度注意必须是<b>→</b>.如果不是就将计算出来的角度加上实际图片的角度减去<b>→</b>的角度吧
