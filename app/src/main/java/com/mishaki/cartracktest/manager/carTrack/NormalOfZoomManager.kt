@@ -6,7 +6,7 @@ import com.baidu.mapapi.map.BitmapDescriptor
 /**
  * 根据缩放等级计算车辆每次移动的距离
  */
-class NormalOfZoomManager(baiduMap: BaiduMap, carIcon: BitmapDescriptor) : NormalCarTrackManeger(baiduMap, carIcon) {
+class NormalOfZoomManager(baiduMap: BaiduMap, carIcon: BitmapDescriptor) : NormalCarTrackManager(baiduMap, carIcon) {
     private var lastMoveDistance = moveDistance.toFloat()
     private var currentMoveDistance = moveDistance.toFloat()
 

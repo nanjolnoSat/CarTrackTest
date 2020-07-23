@@ -2,11 +2,13 @@ package com.mishaki.cartracktest.manager.carTrack
 
 import com.baidu.mapapi.map.*
 import com.baidu.mapapi.model.LatLng
+import org.jetbrains.anko.async
+import org.jetbrains.anko.uiThread
 
 /**
  * 边行驶边画线
  */
-open class NormalCarTrackManeger(baiduMap: BaiduMap, carIcon: BitmapDescriptor) : CarTrackManager(baiduMap, carIcon) {
+open class NormalCarTrackManager(baiduMap: BaiduMap, carIcon: BitmapDescriptor) : CarTrackManager(baiduMap, carIcon) {
     private var firstIndex = 0
     private var secondIndex = 0
     protected var moveLatLngList = ArrayList<ArrayList<LatLng>>()

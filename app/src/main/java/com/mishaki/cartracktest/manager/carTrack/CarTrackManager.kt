@@ -34,6 +34,7 @@ abstract class CarTrackManager(protected val baiduMap: BaiduMap, private val can
     var animateZoom = 14f
 
     var onMoveFinishListener: OnMoveFinishListener? = null
+
     /**
      * 建议最后控制一下数据量,过大的话就导致计算不过来
      */
@@ -77,7 +78,7 @@ abstract class CarTrackManager(protected val baiduMap: BaiduMap, private val can
          */
         @JvmStatic
         fun newNormalInstance(baiduMap: BaiduMap, carIcon: BitmapDescriptor): CarTrackManager {
-            return NormalCarTrackManeger(baiduMap, carIcon)
+            return NormalCarTrackManager(baiduMap, carIcon)
         }
 
         /**
@@ -117,20 +118,22 @@ abstract class CarTrackManager(protected val baiduMap: BaiduMap, private val can
         }
     }
 
+    /**
+     * 可选，建议在构造器调用。移除会影响最终展示效果的UI设置，否则还要为这些设置写相应的代码去适配。
+     */
     protected fun removeUiSetting() {
         baiduMap.uiSettings.isOverlookingGesturesEnabled = false
         baiduMap.uiSettings.isRotateGesturesEnabled = false
         baiduMap.uiSettings.isCompassEnabled = false
     }
 
-    protected fun generateCarMarker(firstLatLng: LatLng, sencondLatLng: LatLng): MarkerOptions {
-        return MarkerOptions().anchor(0.5f, 0.5f).icon(canIcon).position(firstLatLng).rotate(carRotation(firstLatLng, sencondLatLng)).zIndex(carMarkerZIndex)
+    protected fun generateCarMarker(firstLatLng: LatLng, secondLatLng: LatLng): MarkerOptions {
+        return MarkerOptions().anchor(0.5f, 0.5f).icon(canIcon).position(firstLatLng).rotate(carRotation(firstLatLng, secondLatLng)).zIndex(carMarkerZIndex)
     }
 
     protected fun generatePolylineOptions(pointList: List<LatLng>): PolylineOptions {
         return PolylineOptions().width(polylineWidth).color(polylineColor).points(pointList).zIndex(polylineLineZIndex)
     }
-
 
     abstract fun start()
 

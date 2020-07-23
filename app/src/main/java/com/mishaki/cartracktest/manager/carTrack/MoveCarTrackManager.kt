@@ -12,19 +12,19 @@ import org.jetbrains.anko.uiThread
  * 仅行驶
  */
 open class MoveCarTrackManager(baiduMap: BaiduMap, carIcon: BitmapDescriptor) : CarTrackManager(baiduMap, carIcon) {
+    protected var firstIndex = 0
+    protected var secondIndex = 0
+    private var lastMarker: Marker? = null
+    protected var moveLatLngList = ArrayList<ArrayList<LatLng>>()
+
     init {
         removeUiSetting()
     }
-
-    protected var moveLatLngList = ArrayList<ArrayList<LatLng>>()
 
     override fun onSetTrackLatLngListFinish() {
         moveLatLngList = splitLatLng4MoveDistance(actualLatLngList, moveDistance)
     }
 
-    protected var firstIndex = 0
-    protected var secondIndex = 0
-    private var lastMarker: Marker? = null
     override fun start() {
         if (isRunning) {
             return
